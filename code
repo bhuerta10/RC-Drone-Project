@@ -1,0 +1,23 @@
+from djitellopy import Tello
+from threading import Thread
+import time, cv2
+
+
+tello = Tello()
+
+tello.connect()
+
+
+# tello.enable_mission_pads()
+tello.takeoff()
+
+print("Battery: ", tello.get_battery())
+print("Height: ", tello.get_height())
+tello.move_up(20)
+tello.move_forward(135)
+tello.move_right(150)
+tello.move_back(250)
+
+
+tello.move_back(80)
+tello.move_right(200)
